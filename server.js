@@ -19,11 +19,11 @@ connect();
 app.set("view engine", "ejs");
 
 // Middleware for serving static files
-app.use(express.static(path.join(__dirname, "public", "views")));
+app.use(express.static(__dirname + "/public"));
 
 // Route for the home page
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "views", "home", "home.html"));
+app.get("/", function (req, res) {
+  res.sendFile("views/home/home.html", { root: __dirname });
 });
 app.get("/dashboard", (req, res) => {
   res.sendFile(
