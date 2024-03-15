@@ -16,6 +16,7 @@ async function connect() {
 }
 
 connect();
+app.set("view engine", "ejs");
 
 // Middleware for serving static files
 app.use(express.static(path.join(__dirname, "public", "views")));
