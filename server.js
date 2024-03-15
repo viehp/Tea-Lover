@@ -23,7 +23,7 @@ app.use(express.static(__dirname + "/public"));
 
 // Route for the home page
 app.get("/", function (req, res) {
-  res.sendFile("views/home/home.html", { root: __dirname });
+  res.sendFile("public/views/home/home.html", { root: __dirname });
 });
 app.get("/dashboard", (req, res) => {
   res.sendFile(
